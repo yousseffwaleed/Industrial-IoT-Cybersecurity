@@ -39,24 +39,3 @@ RaspberryPi-IoT-Project/
 └── docs/
     ├── device_list.md      # IP allocation table
     └── architecture.png    # System diagram
-
-
-
-🚀 Quick Start
-
-1. Initial Setup
-
-bash
-git clone https://github.com/yousseffwaleed/RaspberryPi-IoT-Project.git
-cd RaspberryPi-IoT-Project
-sudo apt update && sudo apt install python3-pip
-pip3 install -r setup/requirements.txt
-2. Sensor Configuration
-
-Wire sensors:
-VCC → 3.3V (Pin 1)
-DATA → GPIO4 (Pin 7)
-GND → Ground (Pin 6)
-Test:
-bash
-python3 code/dht_test.py
