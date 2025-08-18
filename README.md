@@ -24,3 +24,17 @@
 ---
 
 ## 📂 Repository Structure  
+```plaintext
+RaspberryPi-IoT-Project/
+├── setup/                  # Setup guides
+│   ├── sensor_setup.md     # Wiring + library installation
+│   ├── network_setup.md    # Static IP configuration
+│   └── requirements.txt    # Python dependencies
+├── code/
+│   ├── dht_test.py         # Sensor testing script
+│   └── mqtt_publish.py     # (Future) MQTT data publisher
+├── scripts/
+│   └── static_ip.sh        # Auto-assign IPs (Pi 1 → 192.168.0.11)
+└── docs/
+    ├── device_list.md      # IP allocation table
+    └── architecture.png    # System diagram
