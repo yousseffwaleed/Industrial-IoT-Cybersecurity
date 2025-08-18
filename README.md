@@ -1,7 +1,6 @@
 # 🌐 Raspberry Pi IoT Network  
 **A scalable IoT system using 15 Raspberry Pi 5 devices with DHT11/DHT22 sensors, static IPs, and MQTT integration.**  
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)  
 
 ---
 
