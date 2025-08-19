@@ -1,9 +1,20 @@
-# 🌐 Raspberry Pi IoT Project
+## 📡 Project Overview
 
-This project connects **15 Raspberry Pi 5 (8GB)** devices with **DHT11/DHT22 temperature & humidity sensors**, assigns each Pi a **static IP**, and prepares the system to send data to a central **MQTT broker/cloud**.
+This project connects **15 Raspberry Pi 5 (8GB)** devices, each equipped with **DHT11/DHT22 temperature and humidity sensors**. Every device is assigned a **static IP address** and configured to transmit data to a central **MQTT broker** hosted on an **NVIDIA Jetson Nano edge node**.
 
-The goal is to provide a **plug-and-play IoT system** that anyone can set up by following the instructions in this repository.
+### 🔧 Key Features
 
+- 🔒 **Cybersecurity Monitoring**  
+  The Jetson Nano runs **Suricata**, **Zeek**, and **tcpdump** to simulate and detect cyberattacks such as **spoofing** and **flooding** in real time.
+
+- 🌐 **Edge-to-Cloud Integration**  
+  Real-time data acquisition and publishing through the MQTT protocol, enabling scalable monitoring and control across distributed IoT nodes.
+
+- ⚡ **Plug-and-Play Deployment**  
+  Designed for modular, repeatable setup with minimal configuration. Anyone can replicate this Industrial IoT system by following the step-by-step instructions in this repository.
+
+- 🖥️ **Protocol Diagnostics**  
+  Integrated use of **Wireshark** and custom **Bash/Python scripts** for network traffic inspection, anomaly detection, and logging.
 ---
 
 ## 📌 Features
