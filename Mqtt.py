@@ -1,26 +1,25 @@
-import paho.mqtt.client as mqtt
-import Adafruit_DHT
 import time
-import json
+import board
+import adafruit_dht
+import paho.mqtt.client as mqtt
 
-broker_ip = "192.168.0.100"  # Jetson Nano IP
-topic = "iot/cluster1/pi01"  # Change for each Pi
+# Set up sensor
+dht_device = adafruit_dht.DHT11(board.D4)
 
-sensor = Adafruit_DHT.DHT11
-pin = 4  # GPIO pin connected to DHT sensor
+# Set up MQTT client
+broker_ip = "192.168.0.127"  # <-- Replace with your Jetson's IP
+topic = "iot/cluster2/pi01"
 
 client = mqtt.Client()
 client.connect(broker_ip, 1883, 60)
 
 while True:
-    humidity, temperature = Adafruit_DHT.read_retry(sensor, pin)
-    if humidity is not None and temperature is not None:
-        payload = json.dumps({
-            "temperature": temperature,
-            "humidity": humidity
-        })
-        client.publish(topic, payload)
-        print(f"Published: {payload}")
-    else:
-        print("Sensor read failed")
+    try:
+        temperature_c = dht_device.temperature
+        humidity = dht_device.humidity
+        message = f"Temp: {temperature_c}°C | Humidity: {humidity}%"
+        client.publish(topic, message)
+        print("Published:", message)
+    except Exception as e:
+        print("Sensor error:", e)
     time.sleep(5)
